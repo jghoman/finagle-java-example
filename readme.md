@@ -5,6 +5,7 @@ The examples provided with Finagle itself are geared toward Scala, so this code 
 This is just a quick program I run through IntelliJ to create a server and clients, which issue a series of blocking and non-blocking requests, all while being quite chatty about it, to demonstrate the basic flow of a Finagle server.
 
 Notes:
+
 * The Finagle pom points to several internal Twitter locations.  I've excluded those references that caused compilation to fail.
 
 * Finagle uses a custom thrift compiler that emits Finagle-specific classes.  It can be downloaded from here: https://github.com/mariusaeriksen/thrift-0.5.0-finagle and is built and used in the usual way.
