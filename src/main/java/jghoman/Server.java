@@ -45,7 +45,7 @@ public class Server {
   }
 
   public static class HaverServer implements Haver.ServiceIface /* Special Interface added by Finagle's thrift compiler */ {
-    // In Scala, one can call directory to the FuturePool, but Java gets confused
+    // In Scala, one can call directly to the FuturePool, but Java gets confused
     // between the object and class, so it's best to instantiate an ExecutorServiceFuturePool directly
     ExecutorService es = Executors.newFixedThreadPool(4); // Number of threads to devote to blocking requests
     ExecutorServiceFuturePool esfp = new ExecutorServiceFuturePool(es); // Pool to process blockng requests so server thread doesn't
