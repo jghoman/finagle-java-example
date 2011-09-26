@@ -17,7 +17,7 @@ public class Client {
         Service<ThriftClientRequest, byte[]> client = ClientBuilder.safeBuild(ClientBuilder.get()
                 .hosts(new InetSocketAddress(8080))
                 .codec(new ThriftClientFramedCodecFactory())
-                .hostConnectionLimit(25)); // IMPORTANT: this determines how many rpc's are sent in at once.
+                .hostConnectionLimit(100)); // IMPORTANT: this determines how many rpc's are sent in at once.
                                            // If set to 1, you get no parallelism on for this client.
 
 
@@ -50,12 +50,12 @@ public class Client {
         });
 
         // Now let's inundate the server with lots of blocking calls and watch as it handles them
-        int numCalls = 100;
+        int numCalls = 1000;
         List<BlockingCallResponse> responses = new ArrayList<BlockingCallResponse>(numCalls);
 
         for (int i = 0; i < numCalls; i++) {
           BlockingCallResponse blockingCallResponse = new BlockingCallResponse(i);
-          // Send call to the server, return it's result handler
+          // Send call to the server, return its result handler
           haverClient.blocking_call().addEventListener(blockingCallResponse);
           responses.add(blockingCallResponse);
           System.out.println("Queued up request #" + i);

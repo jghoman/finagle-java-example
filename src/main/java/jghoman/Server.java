@@ -33,8 +33,8 @@ public class Server {
       long acc = 0;
       while(System.currentTimeMillis() < delayUntil) {
         // Let's bind and gag the CPU
-        for(int i = 0; i < 1000000; i++) {
-            for(int j = 0; j < 100000; j++) {
+        for(int i = 0; i < 1000; i++) {
+            for(int j = 0; j < 1000; j++) {
                 acc += delayForSeconds + j + i;
             }
         }
