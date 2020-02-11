@@ -11,15 +11,15 @@
         <repository>
             <id>scala-tools.org</id>
             <name>Scala-tools Maven2 Repository</name>
-            <url>http://scala-tools.org/repo-releases</url>
+            <url>https://scala-tools.org/repo-releases</url>
         </repository>
         <repository>
             <id>twitter</id>
-            <url>http://maven.twttr.com/</url>
+            <url>https://maven.twttr.com/</url>
         </repository>
         <repository>
             <id>mvnrepository</id>
-            <url>http://mvnrepository.com/</url>
+            <url>https://mvnrepository.com/</url>
         </repository>
     </repositories>
     <dependencies>
